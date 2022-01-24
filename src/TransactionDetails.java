@@ -11,7 +11,16 @@ public class TransactionDetails {
     private String referCode;
 
     public TransactionDetails(){
-
+//    row = "";
+//    transactionDate = "";
+//    transactionHour = "";
+//    transactionType = "";
+//    terminalType = "";
+//    price = "";
+//    disNumber = "";
+//    landDate = "";
+//    terminalNumber = "";
+//    referCode = "";
     }
 
     public void setRow(String row) {
