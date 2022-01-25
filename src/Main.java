@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args)throws IOException {
         Scanner scanner;
         String filePath;
+        ArrayList<String> terminals;
 
         ArrayList<TransactionDetails> transactionList = new ArrayList<>();
 
@@ -17,6 +18,7 @@ public class Main {
         scanner = new Scanner(System.in);
         filePath = scanner.nextLine();
         Scanner csvStreamer = new Scanner(new File(filePath));
+
 //        csvStreamer.useDelimiter(",");
 
 //        while (csvStreamer.hasNext()){
@@ -40,6 +42,9 @@ public class Main {
             transactionList.add(tempTransaction);
             }
 
+
+
+
         Iterator<TransactionDetails> it = transactionList.iterator();
         while(it.hasNext()){
             TransactionDetails temp = it.next();
@@ -47,6 +52,14 @@ public class Main {
             System.out.printf("%s \n", temp.getPrice());
         }
         System.out.println("there is total: "+ transactionList.size() + " Transactions");
+
+        TerminalCreator terminalCreator = new TerminalCreator(transactionList);
+        terminalCreator.terminalCreator();
+
+
+        terminalCreator.showTerminals();
+
+
 
     }
 }
