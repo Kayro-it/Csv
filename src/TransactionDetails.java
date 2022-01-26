@@ -4,7 +4,7 @@ public class TransactionDetails {
     private String transactionHour;
     private String transactionType;
     private String terminalType;
-    private String price;
+    private int price;
     private String disNumber;
     private String landDate;
     private String terminalNumber;
@@ -43,7 +43,7 @@ public class TransactionDetails {
         this.terminalType = terminalType;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -83,7 +83,7 @@ public class TransactionDetails {
         return terminalType;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 

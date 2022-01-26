@@ -10,6 +10,7 @@ public class Main {
         Scanner scanner;
         String filePath;
         ArrayList<String> terminals;
+        String reauestedTerminalDetails;
 
         ArrayList<TransactionDetails> transactionList = new ArrayList<>();
 
@@ -34,7 +35,7 @@ public class Main {
             tempTransaction.setTransactionHour(csvStreamer.next());
             tempTransaction.setTransactionType(csvStreamer.next());
             tempTransaction.setTerminalType(csvStreamer.next());
-            tempTransaction.setPrice(csvStreamer.next());
+            tempTransaction.setPrice(csvStreamer.nextInt());
             tempTransaction.setDisNumber(csvStreamer.next());
             tempTransaction.setLandDate(csvStreamer.next());
             tempTransaction.setTerminalNumber(csvStreamer.next());
@@ -45,21 +46,25 @@ public class Main {
 
 
 
-        Iterator<TransactionDetails> it = transactionList.iterator();
-        while(it.hasNext()){
-            TransactionDetails temp = it.next();
-            System.out.printf("%s \t", temp.getRow());
-            System.out.printf("%s \n", temp.getPrice());
-        }
+//        Iterator<TransactionDetails> it = transactionList.iterator();
+//        while(it.hasNext()){
+//            TransactionDetails temp = it.next();
+//            System.out.printf("%s \t", temp.getRow());
+//            System.out.printf("%s \n", temp.getPrice());
+//        }
         System.out.println("there is total: "+ transactionList.size() + " Transactions");
 
         TerminalCreator terminalCreator = new TerminalCreator(transactionList);
         terminalCreator.terminalCreator();
 
 
-        terminalCreator.showTerminals();
+//        terminalCreator.showTerminals();
 
+//        reauestedTerminalDetails = scanner.nextLine();
 
+//        terminalCreator.getTransaction(reauestedTerminalDetails);
+
+        terminalCreator.calculateNumberAndTotalOfTerminals();
 
     }
 }
